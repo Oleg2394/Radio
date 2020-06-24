@@ -19,7 +19,6 @@ class RadioTest {
         Radio radio = new Radio(10);
         radio.setCurrentStation(11);
         int actual = radio.getCurrentStation();
-        int actual = radio.getMaxStation();
         assertEquals(10, actual);
     }
 
@@ -37,12 +36,11 @@ class RadioTest {
         assertEquals(25, actual);
     }
 
-    @Test
+  @Test
     void shouldNotSetOverMaxVolume() {
-        Radio radio = new Radio(100);
-        radio.setCurrentVolume(101);
+        radio.setCurrentVolume(100);
+        radio.increaseVolume();
         int actual = radio.getCurrentVolume();
-        int actual = radio.getMaxVolume();
         assertEquals(100, actual);
     }
 
